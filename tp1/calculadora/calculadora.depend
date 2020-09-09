@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1599631534 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1599631651 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operaciones.c
+	<stdio.h>
+	<stdio.h>
+	"operaciones.h"
+
+1599631082 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operaciones.h
+
+1599631651 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\pedirdatos.c
+	<stdio.h>
+	<stdlib.h>
+	"pedirDatos.h"
+
+1599631534 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\pedirdatos.h
+
