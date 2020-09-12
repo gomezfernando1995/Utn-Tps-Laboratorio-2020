@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1599928031 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"dataEntry.h"
+	"operations.h"
+	"validarNumero.h"
+
+1599754382 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operaciones.c
+	<stdio.h>
+	<stdio.h>
+	"operaciones.h"
+
+1599754382 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operaciones.h
+
+1599631651 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\pedirdatos.c
+	<stdio.h>
+	<stdlib.h>
+	"pedirDatos.h"
+
+1599631534 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\pedirdatos.h
+
+1599768803 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\datos.c
+	<stdio.h>
+	<stdlib.h>
+	"datos.h"
+
+1599768736 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\datos.h
+
+1599762157 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\primermenu.h
+
+1599880967 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\primermenu.c
+	<stdio.h>
+	<stdlib.h>
+	"dataEntry.h"
+	"operaciones.h"
+
+1599886691 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\dataentry.h
+
+1599924177 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\dataentry.c
+	<stdio.h>
+	<stdlib.h>
+	"dataEntry.h"
+
+1599927967 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operations.c
+	<stdio.h>
+	<stdio.h>
+	"operations.h"
+
+1599888799 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\operations.h
+
+1599888791 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\submain.h
+
+1599885010 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\submain.c
+	<stdio.h>
+	<stdlib.h>
+	"subMain.h"
+
+1599924177 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp1\calculadora\validarnumero.h
+
+1599924177 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1a\tp1\calculadora\dataentry.c
+	<stdio.h>
+	<stdlib.h>
+	"dataEntry.h"
+
+1599886691 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1a\tp1\calculadora\dataentry.h
+
+1599929377 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1a\tp1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"dataEntry.h"
+	"operations.h"
+
+1599888799 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1a\tp1\calculadora\operations.h
+
+1599927967 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1a\tp1\calculadora\operations.c
+	<stdio.h>
+	<stdio.h>
+	"operations.h"
+
