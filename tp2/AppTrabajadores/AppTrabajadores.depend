@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1601106903 source:c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\arrayemployee.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+
+1601106905 c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\arrayemployee.h
+
+1601106905 c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\utn_functions.h
+
+1601107021 source:c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\optionsmain.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+	"optionsMain.h"
+
+1601106905 c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\optionsmain.h
+
+1601106905 source:c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\utn_functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1601106944 source:c:\users\elfer\desktop\proyectos\appveterinaria\apptrabajadores\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+	"optionsMain.h"
+
+1601247197 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+
+1601247051 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.h
+
+1601149842 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.h
+
+1601247051 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+	"optionsMain.h"
+
+1601242204 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.h
+
+1601249484 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayEmployee.h"
+	"utn_functions.h"
+	"optionsMain.h"
+
+1601156263 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
