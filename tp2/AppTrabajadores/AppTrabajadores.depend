@@ -36,20 +36,20 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601247197 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.c
+1601663514 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
-	<time.h>
 	"ArrayEmployee.h"
 	"utn_functions.h"
+	"optionsMain.h"
 
-1601247051 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.h
+1601663514 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.h
 
 1601149842 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.h
 
-1601247051 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\main.c
+1601659142 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -58,9 +58,9 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601242204 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.h
+1601623626 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.h
 
-1601249484 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.c
+1601664183 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -69,8 +69,9 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601156263 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.c
+1601663878 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 

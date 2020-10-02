@@ -14,7 +14,7 @@
 
 int main()
 {
- eEmployee arrayEmployee[QTY_EMPLOYEE];
+ eEmployee arrayEmployees[QTY_EMPLOYEE];
  //eEmployee auxiliaryEmployees;
 
  char   auxiliaryNameStr[LONG_NAME];
@@ -22,162 +22,163 @@ int main()
  int    auxiliaryId;
  int    auxiliaryIdForClear;
  int    auxiliarySector;
+
+ int    counterEmplooyes = 0;
+ int    flagEnter = 0;
+ int    newId = 0;
+
+ int    indexResultSearch;
+ int    indexFree;
+ int    indexIdForClear;
+
+ int    option;
+ int    optionTwo;
  float  auxiliarySalary;
+ float  accumulatorSalary = 0;
+ float  average;
 
- int removeId;
- int indexFree;
- int indexResultSearch;
- int indexIdForClear;
- int option;
- int optionTwo;
 
- //int i,j;
-
-    if(initializeArrayEmployee(arrayEmployee,QTY_EMPLOYEE)== 0)      /**< Se indica con -1 que esa posicion esta vacia;**/
+    if(initializeArrayEmployee(arrayEmployees,QTY_EMPLOYEE)== 0)
     {
       do{
-            option = firtsMain();
+            option = firstMain();          // MUESTRA MENU PRINCIPAL
             switch(option)
             {
                 case 1:
-                    indexFree = searchIsEmpty(arrayEmployee,QTY_EMPLOYEE);
-                    if(indexFree == -1)
+                    indexFree = searchIsEmpty(arrayEmployees,QTY_EMPLOYEE);
+                    if(indexFree == -1) //SI SEARCH IS EMPTY DEVUELVE -1 SIGNIFICA QUE NO HAY  LUGAR,  DE LO CONTRARIO MUESTRA MENSAJE PARA INGRESAR DATOS.
                     {
                         printf("NO HAY LUGARES DISPONIBLES!!");
-                    }else{
+                    }else
+                    {
+                        newId ++;
+                        arrayEmployees[indexFree].id= newId;
+                        printf("\n          -Se ha creado la id automaticamente!!\n           -Su es Id: %d  \n",arrayEmployees[indexFree].id);
+                        utn_getTexto(auxiliaryNameStr,"\n          -Ingrese nombre del empleado: ","\n     -Error, ingrese el nombre correctamente\n",5);
+                        utn_getTexto(auxiliaryLastNameStr,"\n          -Ingrese apellido del empleado: ","\n       -Error, reingrese apellido\n",5);
+                        utn_getNumeroFloat(&auxiliarySalary,"\n          -Ingrese salario mensual: ","\n      -Error, ingrese un sueldo correcto\n",0,10000000,5);
 
-                        idRandom(indexFree,arrayEmployee,QTY_EMPLOYEE);
-                        utn_getTexto(auxiliaryNameStr,"\n-Ingrese nombre del empleado: ","\n-Error, ingrese el nombre correctamente\n",5);
-                        utn_getTexto(auxiliaryLastNameStr,"\n-Ingrese apellido del empleado: ","\n-Error, reingrese apellido\n",5);
-                        utn_getNumeroFloat(&auxiliarySalary,"\n-Ingrese salario mensual: ","\n-Error, ingrese un sueldo correcto\n",0,10000000,5);
+                        counterEmplooyes++;
+                        accumulatorSalary = accumulatorSalary +auxiliarySalary;
 
-                        mainSector();
-                        utn_getNumeroInt(&auxiliarySector,"\n -Ingrese opcion de 1 a 6 : ","\nError,reingrese sector\n",1,6,5);
+                        utn_getNumeroInt(&auxiliarySector,"\n          -Ingrese Sector del 1 al 10 : ","\nError,reingrese sector\n",1,10,5);
+                        arrayEmployees[indexFree].sector = auxiliarySector;
+                        arrayEmployees[indexFree].isEmpty = FALSE ;
+                        strncpy(arrayEmployees[indexFree].name,auxiliaryNameStr,LONG_NAME);
+                        strncpy(arrayEmployees[indexFree].lastName,auxiliaryLastNameStr,LONG_NAME);
+                        arrayEmployees[indexFree].salary = auxiliarySalary;
 
-                            switch(auxiliarySector){
-                                case 1:
-                                    strncpy(arrayEmployee[indexFree].sector,"Administrador de bases de datos",LONG_NAME);
-                                break;
-                                case 2:
-                                    strncpy(arrayEmployee[indexFree].sector,"Administrador de redes",LONG_NAME);
-                                break;
-                                case 3:
-                                    strncpy(arrayEmployee[indexFree].sector,"Administrador web",LONG_NAME);
-                                break;
-                                case 4:
-                                    strncpy(arrayEmployee[indexFree].sector,"Administrador informatico",LONG_NAME);
-                                break;
-                                case 5:
-                                    strncpy(arrayEmployee[indexFree].sector,"Diseniador web",LONG_NAME);
-                                break;
-                                case 6:
-                                    strncpy(arrayEmployee[indexFree].sector,"Otro",LONG_NAME);
-                                break;
-                            }
-                        arrayEmployee[indexFree].isEmpty = FALSE ;
-                        strncpy(arrayEmployee[indexFree].name,auxiliaryNameStr,LONG_NAME);
-                        strncpy(arrayEmployee[indexFree].lastName,auxiliaryLastNameStr,LONG_NAME);
-                        arrayEmployee[indexFree].salary = auxiliarySalary;
 
-                        }
+                        flagEnter = 1;
+                    }
+                    average = accumulatorSalary/counterEmplooyes;
                 break;
                 case 2:
+                    // VERIFICA QUE SE HALLA INGRESADO DATOS. DE LO CONTRARIO MUESTRA MENSAJE QUE SE DEBEN INGRESAR DATOS
+                    if(flagEnter == 1){
+                    // PIDE QUE SE INGRESE LEGAJO PARA BUSCAR Y SE PUEDE MODIFICAR, SI ENCUENTRA EL LEGAJO MUESTRA MENU DE MODIFICACION
+                    //   SINO MARCA ERROR QUE NO EXITE TAL LEGAJO INGRESADO
 
-                    if(utn_getNumeroInt(&auxiliaryId ,"\n-Ingrese Legajo a modificar: ","\nError, ingrese un legajo valido\n",1000,2000,3)== -1)
-                    {
-                        break;
-                    }else{
-                        indexResultSearch = searchIdEmployee(arrayEmployee,QTY_EMPLOYEE,auxiliaryId);
-                    }
-                    if(indexResultSearch == -1){
-                        printf("\n -La id ingresada no existe\n");
-                        break;
-                    }else {
-
-                        printf("\n-Datos de la id ingresada:\n\n -Apellido y Nombre: %s %s\n -Salario: $%.2f\n -Sector: %s\n",arrayEmployee[indexResultSearch].lastName,arrayEmployee[indexResultSearch].name,arrayEmployee[indexResultSearch].salary,arrayEmployee[indexResultSearch].sector);
+                        if(utn_getNumeroInt(&auxiliaryId ,"\n         -Ingrese Legajo a modificar: ","\n         -Error, ingrese un legajo valido\n",1,1000,3)== -1)
+                        {
+                            break;
+                        }else
+                        {
+                            indexResultSearch = searchIdEmployee(arrayEmployees,QTY_EMPLOYEE,auxiliaryId);
+                        }
+                        if(indexResultSearch == -1)
+                        {
+                            printf("\n       -La id ingresada no existe\n");
+                            break;
+                        }else
+                        {
+                            printf("\n          -Datos de la id ingresada:\n\n          -Apellido y Nombre: %s %s\n          -Salario: $%.2f\n          -Sector: %d\n",arrayEmployees[indexResultSearch].lastName,arrayEmployees[indexResultSearch].name,arrayEmployees[indexResultSearch].salary,arrayEmployees[indexResultSearch].sector);
 
                         // COMIENZO DEL MENU DE MODIFICACION
-                        do{
-                           optionTwo = mainModification();
-                           switch(optionTwo)
-                           {
-                                case 1:
-                                    utn_getTexto(auxiliaryNameStr,"\n-Ingrese nombre del empleado: ","\n-Error, ingrese el nombre correctamente\n",5);
-                                    strncpy(arrayEmployee[indexResultSearch].name,auxiliaryNameStr,LONG_NAME);
-                                break;
-                                case 2:
-                                    utn_getTexto(auxiliaryLastNameStr,"\n-Ingrese apellido del empleado: ","\n-Error, reingrese apellido\n",5);
-                                    strncpy(arrayEmployee[indexResultSearch].lastName,auxiliaryLastNameStr,LONG_NAME);
-                                break;
-                                case 3:
-                                    utn_getNumeroFloat(&auxiliarySalary,"\n-Ingrese salario mensual: ","\n-Error, ingrese un sueldo correcto\n",0,10000000,5);
-                                    arrayEmployee[indexResultSearch].salary = auxiliarySalary;
-                                break;
-                                case 4:
-                                    mainSector();
-                                    utn_getNumeroInt(&auxiliarySector,"\n -Ingrese opcion de 1 a 6 : ","\nError,reingrese sector\n",1,6,5);
-
-                                        switch(auxiliarySector){
-                                            case 1:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Administrador de bases de datos",LONG_NAME);
-                                            break;
-                                            case 2:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Administrador de redes",LONG_NAME);
-                                            break;
-                                            case 3:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Administrador web",LONG_NAME);
-                                            break;
-                                            case 4:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Administrador informatico",LONG_NAME);
-                                            break;
-                                            case 5:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Diseñador web",LONG_NAME);
-                                            break;
-                                            case 6:
-                                                strncpy(arrayEmployee[indexResultSearch].sector,"Otro",LONG_NAME);
-                                            break;
-                                         }
-                                break;  // BREAK DEL CASE 4 DEL MENU DE MODIFICACION
-                           }
-                         }while(optionTwo !=5); // FIN DEL MENU DE MODIFICACIONES
-                     }
-                break; //FIN DEL CASE 2 DEL MENU PRINCIPAL
+                            do{
+                                optionTwo = mainModification();
+                                switch(optionTwo)
+                                {
+                                    case 1:
+                                        utn_getTexto(auxiliaryNameStr,"\n               -Ingrese nombre del empleado: ","\n             -Error, ingrese el nombre correctamente\n",3);
+                                        strncpy(arrayEmployees[indexResultSearch].name,auxiliaryNameStr,LONG_NAME);
+                                    break;
+                                    case 2:
+                                        utn_getTexto(auxiliaryLastNameStr,"\n           -Ingrese apellido del empleado: ","\n           -Error, reingrese apellido\n",3);
+                                        strncpy(arrayEmployees[indexResultSearch].lastName,auxiliaryLastNameStr,LONG_NAME);
+                                    break;
+                                    case 3:
+                                        utn_getNumeroFloat(&auxiliarySalary,"\n         -Ingrese salario mensual: ","\n                 -Error, ingrese un sueldo correcto\n",0,10000000,3);
+                                        arrayEmployees[indexResultSearch].salary = auxiliarySalary;
+                                    break;
+                                    case 4:
+                                        utn_getNumeroInt(&auxiliarySector,"\n           -Ingrese el sector del 1 al 10: ","\n           -Error,reingrese sector\n",1,10,3);
+                                        arrayEmployees[indexResultSearch].sector=auxiliarySector;
+                                    break;  // BREAK DEL CASE 4 DEL MENU DE MODIFICACION
+                                 }
+                            }while(optionTwo !=5); // FIN DEL MENU DE MODIFICACIONES
+                        }
+                        }else{
+                            printf("\n        NO EXISTEN DATOS PARA MODIFICAR, PRIMERO DEBE DE INGRESAR ALGUNONO \n");
+                        }
+                        break; //FIN DEL CASE 2 DEL MENU PRINCIPAL
                 case 3:
-
-                    if(utn_getNumeroInt(&auxiliaryIdForClear,"\n-Ingrese Legajo a borrar: ","\nError, ingrese un legajo valido\n",1000,2000,3)== -1)
-                    {
-                        break;
-                    }else{
-                        indexIdForClear = searchIdEmployee(arrayEmployee,QTY_EMPLOYEE,auxiliaryIdForClear);
-                    }
-                    if(indexIdForClear == -1){
-                        printf("\n -La id ingresada no existe\n");
-                        break;
-                    }else {
-                        printf("\n-Datos de la id ingresada:\n\n -Apellido y Nombre: %s %s\n -Salario: $%.2f\n -Sector: %s\n",arrayEmployee[indexIdForClear].lastName,arrayEmployee[indexIdForClear].name,arrayEmployee[indexIdForClear].salary,arrayEmployee[indexIdForClear].sector);
-
-                        if(mainAlertClean() == 1){
-
-                            removeId = removeEmployee(arrayEmployee,QTY_EMPLOYEE,auxiliaryIdForClear);
-                            if(removeId == -1)
+                        if(flagEnter == 1){
+                          // SE VERIFICA QUE PRIMERO SE HALLAN INGRESADOS DATOS, DE LO CONTRARIO DA ERROR
+                            if(utn_getNumeroInt(&auxiliaryIdForClear,"\n          -Ingrese Legajo a borrar: ","\n       Error, ingrese un legajo valido\n",1,1000,3)== -1)
                             {
-                               printf("\n ERROR,NO SE PUDO BORRAR LA ID.\n");
+                                break;
                             }else{
-                                printf("\n -----------------------------------------------------------------------");
-                                printf("\n|                  La id a sido borrada con exito!                      |   \n");
-                                printf(" -----------------------------------------------------------------------\n");
+                                // SI SE INGRESAN DATOS, PIDE QUE SE INGRESE EL LEGAJO PARA BUSCARLO.
+                                indexIdForClear = searchIdEmployee(arrayEmployees,QTY_EMPLOYEE,auxiliaryIdForClear);
                             }
 
-                        }else{
-                            break;
+                            if(indexIdForClear == -1){
+                                printf("\n -La id ingresada no existe\n");
+                                break;
+                            }else
+                            {
+                                //SI ENCUENTRA EL LEGAJO MUESTRA LOS DATOS QUE CONTIENE ESA ID , LUEGO MUESTRA ADVERTENCIA Y SI ESTA
+                                // SEGURO QUE SE QUIERE BORRAR.
+                                printf("\n          -Datos de la id ingresada:\n\n          -Apellido y Nombre: %s %s\n          -Salario: $%.2f\n          -Sector: %d\n",arrayEmployees[indexIdForClear].lastName,arrayEmployees[indexIdForClear].name,arrayEmployees[indexIdForClear].salary,arrayEmployees[indexIdForClear].sector);
+                                if(mainAlertClean() == 1)
+                                {
+                                    if(removeEmployee(arrayEmployees,QTY_EMPLOYEE,auxiliaryIdForClear)== -1)
+                                        //SI DEVUELVE -1 SIGNIFICA QUE HUBO EN ERROR EN EL PROGRAMA.
+                                    {
+                                        printf("\n       ERROR,NO SE PUDO BORRAR LA ID.\n");
+                                    }else
+                                    {   // SI SE CONFIRMO , MUESTRA EL MENSAJE QUE HA SIDO ELIMINADA CON EXITO.
+                                        printf("\n          -----------------------------------------------------------------------");
+                                        printf("\n         |                  La id a sido borrada con exito!                      |\n");
+                                        printf("         -----------------------------------------------------------------------\n");
+                                    }
+                                    }else
+                                    {
+                                        break;
+                                    }
+                            }
+                        }else
+                        {
+                            printf("\n           PRIMERO DEBE DE INGRESAR DATOS PARA BORRAR\n");
                         }
-                    }
+                        break;
+                case 4:
+                        //OPCION 4 SOLO MUESTRA LOS DATOS SOLO SI SE INGRESARON.
+                        if(flagEnter == 1){
+                           toShowInformation(arrayEmployees,QTY_EMPLOYEE,accumulatorSalary,average);
+                        }else{
+                            printf("\n           PARA VER DATOS DEBE DE INGRESAR ALGUNO\n");
+                        }
+                break;
             }
         }while(option!=5);
 
     }else{
-            printf("HUBO UN ERROR AL INICIALIZAR ARRAY DE EMPLEADOS");
+            printf("\n  HUBO UN ERROR AL INICIALIZAR ARRAY DE EMPLEADOS \n");
     }
+        messageThanks();
+
 
     return 0;
 }

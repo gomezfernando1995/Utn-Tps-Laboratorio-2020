@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
 
 // PROTOTIPOS ESTATICOS///
 
@@ -12,17 +12,9 @@ static int utn_myGets(char* cadena, int longitud);
 static int utn_esFloat(char* cadena);
 static int utn_getFloat(float* pResultado);
 
-static int utn_getText(char pResultado[]);
+static int getText(char pResultado[]);
 static int utn_myGetsChar(char cadena[],int longitud);
-static int utn_esSoloLetras(char cadena[]);
-
-static int esAlfaNumerica(char cadena[]);
-static int getAlfanumerico(char pResultado[]);
-
-static int getTelephone(int* pResultado);
-static int isTelephone(char cadena[]);
-
-
+static int isChar(char cadena[]);
 
 //===============================================================================================================================
 
@@ -82,7 +74,7 @@ int utn_getNumeroInt(int* pResultado, char* mensaje, char* mensajeError, int min
 	{
 		do{
 			printf("%s",mensaje);
-			if(utn_getInt(&bufferInt) == 0 && bufferInt >= minimo && bufferInt <= maximo)
+			if(utn_getInt(&bufferInt) == 0 && bufferInt >= minimo && bufferInt <= maximo )
 			{
 		            *pResultado = bufferInt;
 			     retorno = 0;
@@ -132,7 +124,7 @@ static int utn_myGets(char* cadena, int longitud)
 
     if(cadena != NULL && longitud >0 && fgets(cadena,longitud,stdin)==cadena)
     {
-            fflush(stdin); // LINUX-> __fpurge o WIN-> fflush o MAC-> fpurge
+            fflush(stdin);
             if(cadena[strlen(cadena)-1] == '\n')
             {
                 cadena[strlen(cadena)-1] = '\0';
@@ -249,7 +241,7 @@ int retorno=-1;
 char buffer[64];
     if(pResultado != NULL)
     {
-        if(utn_myGets(buffer,sizeof(buffer))==0 && utn_esFloat(buffer)==1)
+        if(utn_myGets(buffer,sizeof(buffer))==0 && utn_esFloat(buffer)==1 && buffer[0]!='\0')
         {
             *pResultado = atof(buffer);
             retorno = 0;
@@ -328,8 +320,12 @@ int utn_getTexto(char pResultado[], char* mensaje, char* mensajeError, int reint
 	{
 		do{
 			printf("%s",mensaje);
-			if(utn_getText(bufferChar) == 0 )
+			if(getText(bufferChar) == 0 && bufferChar[0] != '\0')
 			{
+                 for (i=0; bufferChar[i]!= '\0'; i++)
+                 {
+                    bufferChar[i] = tolower(bufferChar[i]);
+                 }
 			     for(i = 0; bufferChar[i]; i++)
                  {
                     bufferChar[0] = toupper(bufferChar[0]);
@@ -351,13 +347,13 @@ int utn_getTexto(char pResultado[], char* mensaje, char* mensajeError, int reint
  * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
 *
 */
-static int utn_getText(char pResultado[])
+static int getText(char pResultado[])
 {
 int retorno=-1;
 char buffer[128];
     if(pResultado != NULL)
     {
-        if(utn_myGetsChar(buffer,sizeof(buffer))==0 && utn_esSoloLetras(buffer)==0)
+        if(utn_myGetsChar(buffer,sizeof(buffer))==0 && isChar(buffer)==0)
         {
             strcpy(pResultado,buffer);
             retorno = 0;
@@ -396,7 +392,7 @@ return retorno;
 * \param *cadena Cadena de caracteres a ser analizada
 * \return Retorna 0 (vardadero) si la cadena es numerica y -1 (falso) si no lo es
 */
-static int utn_esSoloLetras(char cadena[])
+static int isChar(char cadena[])
 {
 	//si 0 para verdadero y -1 para falso
 

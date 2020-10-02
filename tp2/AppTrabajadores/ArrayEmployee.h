@@ -7,17 +7,17 @@ typedef struct
 	char name[50];
     char lastName[50];
     float salary;
-    char sector[50];
+    int sector;
 	int isEmpty;
 
 }eEmployee;
 
+#endif // ARRAYEMPLOYEE_H_INCLUDED
+
 int initializeArrayEmployee(eEmployee arrayEmployee[],int quantityEmployee);
 int searchIsEmpty(eEmployee arrayEmployee[],int quantityEmployee);
-int idRandom(int indexFree,eEmployee arrayEmployee[],int quantityEmployee);
 int searchIdEmployee(eEmployee arrayEmployee[],int quantityEmployee,int auxiliaryId);
 int removeEmployee(eEmployee arrayEmployee[], int quantityEmployee, int idForClear);
+void toShowInformation(eEmployee arrayEmployees[],int quantityEmployee,float accumualteSalary, float average);
 
 
-
-#endif // ARRAYEMPLOYEE_H_INCLUDED
