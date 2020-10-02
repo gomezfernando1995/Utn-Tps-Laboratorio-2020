@@ -142,14 +142,14 @@ void toShowInformation(eEmployee arrayEmployees[],int quantityEmployee,float acc
             printf("\n    ====================================================================================\n");
             printf("   |                           TABLA DE EMPLEADOS EXISTENTES                            |\n");
 			printf("    ====================================================================================\n");
-            printf("   |     ID    |     APELLIDO        |       NOMBRE       |   SALARIO      |  SECTOR    |\n");
+            printf("   |     ID    |     APELLIDO     |     NOMBRE      |   SALARIO        |  SECTOR    |\n");
 			for (i=0;i<quantityEmployee; i++)
 			{
 				if(arrayEmployees[i].isEmpty == FALSE ){
-					printf("   |   %4d    |    %10s       |    %10s      |  %.2f        |   %2d     \n",arrayEmployees[i].id,arrayEmployees[i].lastName,arrayEmployees[i].name,arrayEmployees[i].salary, arrayEmployees[i].sector);
+					printf("   |     %d     |     %2s       %10s             %5.2f           %d   \n",arrayEmployees[i].id,arrayEmployees[i].lastName,arrayEmployees[i].name,arrayEmployees[i].salary, arrayEmployees[i].sector);
 				}
 			}
-			printf("    ====================================================================================");
+			printf("    =================================================================================");
 
             employeeExceedsAverage  = averageExceeds(arrayEmployees,quantityEmployee,average);
             if(employeeExceedsAverage == -1)

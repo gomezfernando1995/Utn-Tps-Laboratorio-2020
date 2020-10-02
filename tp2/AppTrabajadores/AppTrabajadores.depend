@@ -36,7 +36,7 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601663514 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.c
+1601659367 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -45,7 +45,7 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601663514 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.h
+1601659360 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\arrayemployee.h
 
 1601149842 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.h
 
@@ -60,7 +60,7 @@
 
 1601623626 c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.h
 
-1601664183 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.c
+1601655390 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\optionsmain.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -69,7 +69,7 @@
 	"utn_functions.h"
 	"optionsMain.h"
 
-1601663878 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.c
+1601411824 source:c:\users\elfer\desktop\facultad\laboratorio y programacion\tp_laboratorio_1\tp2\apptrabajadores\utn_functions.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
