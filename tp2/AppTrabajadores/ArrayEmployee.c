@@ -18,7 +18,7 @@ static int sortEmployeesUpToLower(eEmployee arrayEmployees[],int quantityEmploye
 static int averageExceeds(eEmployee arrayEmployees[],int quantityEmployee,float average);
 
 //_________________________________________________________________________________________________________________________________
-                                            // FUCTION FOR DECLARATION  ALL SPACES ARE EMPTY.
+                                            // FUCTION FOR  ALL SPACES ARE EMPTY.
 
 /** \brief FUNCION PARA INICIALIZAR TODAS LAS POSCION  SON LIBRES Y QUE LOS SALARIOS COMIENZAN EN 0.
  *
@@ -139,34 +139,34 @@ void toShowInformation(eEmployee arrayEmployees[],int quantityEmployee,float acc
 
     do{
 
-            printf("\n    ====================================================================================\n");
-            printf("   |                           TABLA DE EMPLEADOS EXISTENTES                            |\n");
-			printf("    ====================================================================================\n");
-            printf("   |     ID    |     APELLIDO     |     NOMBRE      |   SALARIO        |  SECTOR    |\n");
+            printf("\n       ================================================================================\n");
+            printf("      |                           TABLA DE EMPLEADOS EXISTENTES                        |\n");
+			printf("      |================================================================================|\n");
+            printf("      |     ID    |     APELLIDO     |     NOMBRE      |   SALARIO        |  SECTOR    |\n");
 			for (i=0;i<quantityEmployee; i++)
 			{
 				if(arrayEmployees[i].isEmpty == FALSE ){
-					printf("   |     %d     |     %2s       %10s             %5.2f           %d   \n",arrayEmployees[i].id,arrayEmployees[i].lastName,arrayEmployees[i].name,arrayEmployees[i].salary, arrayEmployees[i].sector);
+					printf("      |     %-4d  |      %-10s  |   %-10s    |     %-8.2f     |    %-2d      |\n",arrayEmployees[i].id,arrayEmployees[i].lastName,arrayEmployees[i].name,arrayEmployees[i].salary, arrayEmployees[i].sector);
 				}
 			}
-			printf("    =================================================================================");
+			printf("       ================================================================================");
 
             employeeExceedsAverage  = averageExceeds(arrayEmployees,quantityEmployee,average);
             if(employeeExceedsAverage == -1)
             {
-            printf("\n      ====================================================================================\n");
-            printf("    | TOTAL DE LOS SALARIOS INGRESADOS    : %10.2f                                   |\n",accumualteSalary);
-            printf("    | PROMEDIO DE LOS SALARIOS INGRESADOS : %10.2f                                   |\n",average);
-            printf("    | NINGUN SALARIO SUPERA EL TOTAL DEL PROMEDIO                                        |\n");
-            printf("     ====================================================================================\n");
+            printf("\n         =============================================================================\n");
+            printf("        | TOTAL DE LOS SALARIOS INGRESADOS    : %-8.2f                              |\n",accumualteSalary);
+            printf("        | PROMEDIO DE LOS SALARIOS INGRESADOS : %-8.2f                              |\n",average);
+            printf("        | NINGUN SALARIO SUPERA EL TOTAL DEL PROMEDIO                                 |\n");
+            printf("         =============================================================================\n");
 
             }else
             {
-            printf("\n      ====================================================================================\n");
-            printf("    | TOTAL DE LOS SALARIOS INGRESADOS   : %2.2f                                      |\n",accumualteSalary);
-            printf("    | PROMEDIO DE LOS SALARIOS INGRESADOS: %2.2f                                      |\n",average);
-            printf("    | EMPLEADOS QUE SUPERAN EL PROMEDIO: %d                                              |\n",employeeExceedsAverage);
-            printf("     ====================================================================================\n");
+            printf("\n          ====================================================================================\n");
+            printf("        | TOTAL DE LOS SALARIOS INGRESADOS   : %-.2f                                      |\n",accumualteSalary);
+            printf("        | PROMEDIO DE LOS SALARIOS INGRESADOS: %-.2f                                      |\n",average);
+            printf("        | EMPLEADOS QUE SUPERAN EL PROMEDIO: %-d                                              |\n",employeeExceedsAverage);
+            printf("        ====================================================================================\n");
 
             }
 

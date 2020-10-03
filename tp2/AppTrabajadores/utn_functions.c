@@ -83,6 +83,10 @@ int utn_getNumeroInt(int* pResultado, char* mensaje, char* mensajeError, int min
 			reintentos--;
 			printf("%s",mensajeError);
 		}while(reintentos >=0);
+		if(reintentos == 0){
+            retorno = -1;
+		}
+
 	}
 	return retorno;
 }
@@ -224,6 +228,9 @@ int utn_getNumeroFloat(float* pResultado, char* mensaje, char* mensajeError, int
 			reintentos--;
 			printf("%s",mensajeError);
 		}while(reintentos >=0);
+		if(reintentos == 0){
+            retorno = -1;
+		}
 	}
 	return retorno;
 }
@@ -337,6 +344,10 @@ int utn_getTexto(char pResultado[], char* mensaje, char* mensajeError, int reint
 			reintentos--;
             printf("%s",mensajeError);
 		}while(reintentos >=0);
+		if(reintentos == 0){
+            retorno = -1;
+		}
+
  	}
 	return retorno;
 }

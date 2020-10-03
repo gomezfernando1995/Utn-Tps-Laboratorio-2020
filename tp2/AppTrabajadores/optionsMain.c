@@ -96,13 +96,13 @@ int mainAlertClean()
 int mainSort(void)
 {
     int option;
-    printf("\n\n       ============================ OPCION DE ORDEN ===================================\n");
-    printf("      |          1-Ordenar por apellido y sector de manera ascendente                  |\n");
-    printf("      |          2-Ordenar por apellido y sector de manera descendente                 |\n");
-    printf("      |          3-Volver                                                              |\n");
-    printf("       ================================================================================\n");
+    printf("\n        ============================ OPCION DE ORDEN ===================================\n");
+    printf("       |          1-Ordenar por apellido y sector de manera ascendente                  |\n");
+    printf("       |          2-Ordenar por apellido y sector de manera descendente                 |\n");
+    printf("       |          3-Volver                                                              |\n");
+    printf("        ================================================================================\n");
 
-    utn_getNumeroInt(&option,"\n    -Elija una opcion: ","\n        Error, la opcion que eligio no existe",1,3,5);
+    utn_getNumeroInt(&option,"\n    -Elija una opcion: ","\n    -Error, la opcion que eligio no existe",1,3,5);
 
     return option;
 }

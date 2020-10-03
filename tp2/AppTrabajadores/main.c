@@ -54,9 +54,9 @@ int main()
                         newId ++;
                         arrayEmployees[indexFree].id= newId;
                         printf("\n          -Se ha creado la id automaticamente!!\n           -Su es Id: %d  \n",arrayEmployees[indexFree].id);
-                        utn_getTexto(auxiliaryNameStr,"\n          -Ingrese nombre del empleado: ","\n     -Error, ingrese el nombre correctamente\n",5);
-                        utn_getTexto(auxiliaryLastNameStr,"\n          -Ingrese apellido del empleado: ","\n       -Error, reingrese apellido\n",5);
-                        utn_getNumeroFloat(&auxiliarySalary,"\n          -Ingrese salario mensual: ","\n      -Error, ingrese un sueldo correcto\n",0,10000000,5);
+                        utn_getTexto(auxiliaryNameStr,"\n          -Ingrese nombre del empleado: ","\n          -Error, ingrese el nombre correctamente\n",5);
+                        utn_getTexto(auxiliaryLastNameStr,"\n          -Ingrese apellido del empleado: ","\n    -Error, reingrese apellido\n",5);
+                        utn_getNumeroFloat(&auxiliarySalary,"\n          -Ingrese salario mensual: ","\n        -Error, ingrese un sueldo correcto\n",0,10000000,5);
 
                         counterEmplooyes++;
                         accumulatorSalary = accumulatorSalary +auxiliarySalary;
